@@ -10,7 +10,7 @@
     --dark-blue: hsl(234, 12%, 34%);
     --grayish-blue: hsl(229, 6%, 66%);
     --very-light-gray: hsl(0, 0%, 98%);
-    --white: hsl(100%, 100%, 100%);
+    --white: hsl(0, 0%, 100%);
 }
 
 /* reset */
@@ -31,7 +31,7 @@ h6 {
 
 /* layout */
 .l_wrapper {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -51,7 +51,7 @@ body {
 .header {
     text-align: center;
     max-width: 550px;
-    margin: 100px auto;
+    margin: 100px auto 50px;
     padding: 0 10px;
     box-sizing: border-box;
     /* max-width: 400px; */
@@ -73,7 +73,40 @@ body {
     color: var(--grayish-blue);
 }
 
-.box {
+.card {
     display: flex;
-    background-color: yellowgreen;
+    flex-direction: column;
+    background-color: var(--white);
+    max-width: 380px;
+    aspect-ratio: 3/2;
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--cyan);
+}
+
+.card:not(:first-child) {
+    margin-top: 40px;
+}
+
+.card::after {
+    content: " ";
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: auto 0 0 auto;
+    background-image: url(images/icon-calculator.svg);
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+}
+
+.card-contents p {
+    font-size: 1.5rem;
+    color: var(--grayish-blue);
 }
