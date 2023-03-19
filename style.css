@@ -29,9 +29,15 @@ h6 {
     font-weight: normal;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
 /* layout */
 .l_wrapper {
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -51,7 +57,7 @@ body {
 .header {
     text-align: center;
     max-width: 550px;
-    margin: 100px auto 50px;
+    margin: 100px auto 0px;
     padding: 0 10px;
     box-sizing: border-box;
     /* max-width: 400px; */
@@ -73,6 +79,15 @@ body {
     color: var(--grayish-blue);
 }
 
+.contents{
+    margin: 100px 0;
+}
+
+.contents-inside{
+position: relative;
+
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -83,21 +98,56 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid var(--cyan);
+    border-top: 5px solid;
+}
+
+  .card:first-child{
+        position: static;
+        transform: translate(0);
+    }
+
+    .card:last-child{
+        position: static;
+        transform: translate(0);
+    }
+
+    .card:not(:first-child) {
+        margin-top: 40px;
+    }
+
+.card.type_red{
+    color:var(--red);
+}
+
+.card.type_cyan{
+    color: var(--cyan);
+}
+
+.card.type_orange{
+    color: var(--orange);
+}
+
+.card.type_blue{
+    color: var(--blue);
 }
 
 .card:not(:first-child) {
     margin-top: 40px;
 }
 
-.card::after {
+.card-icon {
     content: " ";
     width: 64px;
     height: 64px;
     display: block;
     margin: auto 0 0 auto;
-    background-image: url(images/icon-calculator.svg);
 }
+
+/* .card:first-child{
+    position:absolute;
+} */
+
+
 
 .card-title {
     font-size: 2rem;
@@ -109,4 +159,22 @@ body {
 .card-contents p {
     font-size: 1.5rem;
     color: var(--grayish-blue);
+}
+
+@media (min-width:1230px){
+  
+
+    .card:first-child{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+    }
+    
+    .card:last-child{
+        margin-top:0;
+        position: absolute;
+        right:0;
+        top:50%;
+        transform: translateY(-50%);
+    }
 }
